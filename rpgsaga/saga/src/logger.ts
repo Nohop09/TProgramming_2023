@@ -1,31 +1,31 @@
-import { Hero } from "./hero";
+import { Player } from "./player";
 
 export class Logger{
     static roundCounter(roundCounter: number){
         console.log(`Кон ${roundCounter}`)
     }
 
-    static announcementHero(firstHero: Hero, secondHero: Hero){
-        console.log(`${firstHero.name} - ${firstHero.heroType} (Сила: ${firstHero.strength}, Здоровье:${firstHero.curHealth} ) против ${secondHero.name} - ${secondHero.heroType} (Сила: ${secondHero.strength}, Здоровье:${secondHero.curHealth} )` )
+    static announcementPlayer(firstPlayer: Player, secondPlayer: Player){
+        console.log(`${firstPlayer.name} - ${firstPlayer.PlayerType} (Сила: ${firstPlayer.strength}, Здоровье:${firstPlayer.curHealth} ) против ${secondPlayer.name} - ${secondPlayer.PlayerType} (Сила: ${secondPlayer.strength}, Здоровье:${secondPlayer.curHealth} )` )
     }
 
-    static stunned(hero: Hero){
-        console.log(`${hero.name} - ${hero.heroType} пропускает ход`)
+    static stunned(Player: Player){
+        console.log(`${Player.name} - ${Player.PlayerType} пропускает ход`)
     }
 
-    static useAbility(firstHero: Hero, secondHero: Hero, damage: number){
-        console.log(`${firstHero.name} - ${firstHero.heroType} применяет ${firstHero.abilName} и нанонсит урон в размере ${damage} единиц противнику ${secondHero.name} - ${secondHero.heroType}`)
+    static useAbility(firstPlayer: Player, secondPlayer: Player, damage: number){
+        console.log(`${firstPlayer.name} - ${firstPlayer.PlayerType} применяет ${firstPlayer.abilityName} и нанонсит урон в размере ${damage} единиц противнику ${secondPlayer.name} - ${secondPlayer.PlayerType}`)
     }
 
-    static dealDamage(firstHero: Hero, secondHero: Hero, damage: number){
-        console.log(`${firstHero.name} - ${firstHero.heroType} нанонсит урон в размере ${damage} единиц противнику ${secondHero.name} - ${secondHero.heroType}`)
+    static dealDamage(firstPlayer: Player, secondPlayer: Player, damage: number){
+        console.log(`${firstPlayer.name} - ${firstPlayer.PlayerType} нанонсит урон в размере ${damage} единиц противнику ${secondPlayer.name} - ${secondPlayer.PlayerType}`)
     }
 
-    static heroDeath(hero: Hero){
-        console.log(`${hero.name} - ${hero.heroType} погиб`)
+    static PlayerDeath(Player: Player){
+        console.log(`${Player.name} - ${Player.PlayerType} погиб`)
     }
 
-    static burning(hero: Hero){
-        console.log(`${hero.name} - ${hero.heroType} получает урон в размере ${hero.tickDamage} единиц`)
+    static burning(Player: Player){
+        console.log(`${Player.name} - ${Player.PlayerType} получает урон в размере ${Player.tickDamage} единиц`)
     }
 }

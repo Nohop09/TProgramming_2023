@@ -1,4 +1,4 @@
-import { randomNumber } from "./getRandomNumber";
+import { randomNumber } from "./randomNumber";
 
 export abstract class Player {
     name:string;
@@ -14,12 +14,14 @@ export abstract class Player {
 
     readonly healthPoint = [50,75,100];
 
-    constructor(name: string,heroClass:string, ability) {
+    constructor(name: string,heroClass:string, abilityName) {
         this.name = name;
         this.heroClass = heroClass;
-        this.ability = ability;
+        this.abilityName = abilityName;
         this.tickDamage = 0;
-        this.strength = randomNumber(2,25);
+        this.strength = randomNumber(2, 25);
         this.health =  this.healthPoint[randomNumber(0,this.healthPoint.length-1)];
     }
+    abstract ability(player:Player);
+    abstract damage(player:Player);
 }
